@@ -151,6 +151,12 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="SQLLibraryKontorsPrylarAB\SQLLibraryKontorsPrylarAB.csproj">
+      <Project>{ac4431e4-a2c7-4892-bcf2-2aa37e592cc6}</Project>
+      <Name>SQLLibraryKontorsPrylarAB</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

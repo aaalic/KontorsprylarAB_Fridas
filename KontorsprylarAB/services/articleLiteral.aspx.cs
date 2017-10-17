@@ -17,9 +17,33 @@ namespace KontorsprylarAB.services
         {
             SQLStuff sqlStuff = new SQLStuff();
 
-            string jsonString = JsonConvert.SerializeObject(sqlStuff.ReadAllArticles());
+            if (Request["action"] == "loadArticles")
+            {
 
-            literalArticles.Text = jsonString;
+                string jsonString = JsonConvert.SerializeObject(sqlStuff.ReadAllArticles());
+
+                literalArticles.Text = jsonString;
+            }
+            
+
+
+            if (Request["action"] == "addToCart")
+            {
+                int aid = Convert.ToInt32(Request["aid"]);
+
+                int result = sqlStuff.AddArticleToOrder(2, aid);
+
+                if (result > 0)
+                {
+
+                    literalArticles.Text = "Hurra!!!";
+                }
+
+                else
+                {
+                    literalArticles.Text = "Error";
+                }
+            }
         }
     }
 }
